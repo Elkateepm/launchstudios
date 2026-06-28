@@ -24,6 +24,11 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;cursor:none}
 
+.orb{position:fixed;border-radius:999px;filter:blur(80px);opacity:0.35;pointer-events:none;z-index:0}
+.orb-one{width:420px;height:420px;background:#4F8EF7;left:-140px;top:200px;animation:orbFloat 8s ease-in-out infinite}
+.orb-two{width:500px;height:500px;background:#8B5CF6;right:-180px;top:500px;animation:orbFloat 10s ease-in-out infinite reverse}
+.orb-three{width:300px;height:300px;background:#22D3EE;left:30%;bottom:20%;opacity:0.15;animation:orbFloat 12s ease-in-out infinite}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
 /* CURSOR */
 #cur{width:8px;height:8px;background:#fff;border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform 0.2s,background 0.2s;top:0;left:0}
 #cur-ring{width:40px;height:40px;border:1px solid rgba(79,142,247,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;top:0;left:0;transition:transform 0.08s,width 0.2s,height 0.2s,border-color 0.2s;transform:translate(-50%,-50%)}
@@ -65,6 +70,51 @@ body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);ov
 .scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,rgba(79,142,247,0.8),transparent);animation:scrollPulse 2s infinite}
 @keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(0.6)}50%{opacity:1;transform:scaleY(1)}}
 
+/* DASHBOARD MOCKUP */
+.hero-right{position:relative}
+.product-window{
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:28px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04));
+  box-shadow:0 40px 120px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.15);
+  backdrop-filter:blur(20px);
+  padding:20px;
+  transform:perspective(1000px) rotateY(-4deg) rotateX(2deg);
+  transition:transform 0.4s ease;
+}
+.product-window:hover{transform:perspective(1000px) rotateY(-1deg) rotateX(0deg)}
+.window-bar{display:flex;gap:8px;margin-bottom:18px}
+.window-bar span{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.3)}
+.window-bar span:nth-child(1){background:#FF5F57}
+.window-bar span:nth-child(2){background:#FFBD2E}
+.window-bar span:nth-child(3){background:#28CA41}
+.dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dash-panel{
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  background:rgba(8,12,29,0.7);
+  padding:18px;
+  backdrop-filter:blur(10px);
+}
+.dash-panel.large{grid-column:span 2;background:linear-gradient(135deg,rgba(79,142,247,0.2),rgba(139,92,246,0.12))}
+.dash-panel.wide{grid-column:span 2}
+.dash-panel small{display:block;color:var(--grey);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.dash-panel strong{font-size:28px;font-weight:800;display:block}
+.dash-progress{height:10px;background:rgba(255,255,255,0.1);border-radius:99px;overflow:hidden;margin-top:16px}
+.dash-progress-fill{width:0%;height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:99px;transition:width 1.5s cubic-bezier(0.4,0,0.2,1)}
+.mission-card-float{
+  position:absolute;z-index:3;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(20px);
+  border-radius:16px;
+  padding:14px 18px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.top-card{right:-20px;top:-20px}
+.bottom-card{left:-20px;bottom:30px}
+.mc-label{display:block;font-size:11px;color:var(--grey);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px}
+.mc-val{font-size:14px;font-weight:800;color:var(--white);display:block}
 /* MARQUEE STRIP */
 .marquee-section{padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(255,255,255,0.015);overflow:hidden;position:relative;z-index:2}
 .marquee-track{display:flex;gap:0;animation:marquee 25s linear infinite;width:max-content}
@@ -237,6 +287,9 @@ footer{padding:60px 48px 40px;border-top:1px solid var(--border)}
 </head>
 <body>
 
+<div class="orb orb-one"></div>
+<div class="orb orb-two"></div>
+<div class="orb orb-three"></div>
 <div id="cur"></div>
 <div id="cur-ring"></div>
 <div id="cur-glow"></div>
