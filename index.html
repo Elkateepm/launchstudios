@@ -72,20 +72,7 @@ nav.scrolled {
   display: flex; align-items: center; gap: 12px;
   text-decoration: none;
 }
-.nav-logo-mark {
-  width: 36px; height: 36px;
-  background: var(--grad);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
-}
-.nav-logo-text {
-  font-family: 'Syne', sans-serif;
-  font-size: 17px; font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.3px;
-}
-.nav-logo-text span { color: var(--blue); }
+/* logo via img */
 .nav-links {
   display: flex; gap: 36px; list-style: none;
 }
@@ -636,8 +623,7 @@ footer {
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <div class="nav-logo-mark">🚀</div>
-    <div class="nav-logo-text">Launch<span>Studios</span></div>
+    <img src="logo.png" alt="LaunchStudios" style="height: 36px; width: auto; object-fit: contain;" />
   </a>
   <ul class="nav-links">
     <li><a href="#what-we-build">Services</a></li>
@@ -906,7 +892,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Launch<span>Studios</span> <span style="color: var(--grey); font-weight: 400; font-size: 12px; margin-left: 8px;">Beautiful software. Built to launch.</span></div>
+  <div class="footer-logo"><img src="logo.png" alt="LaunchStudios" style="height: 28px; width: auto; object-fit: contain;" /></div>
   <div class="footer-copy">© 2026 LaunchStudios Ltd. All rights reserved.</div>
   <div class="footer-links">
     <a href="mailto:hello@launchstudios.co.uk">hello@launchstudios.co.uk</a>
